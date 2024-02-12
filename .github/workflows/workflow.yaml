@@ -1,0 +1,24 @@
+name: Deploy Azure Resources
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Set up Azure CLI
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_LOGIN_CREDENTIALS }}
+      - name: Install Bicep CLI
+        run: |
+          curl -Lo bicep https://github.com/Azure/bicep/releases/latest/download/bicep-linux-x64
+          chmod +x ./bicep
+          sudo mv ./bicep /usr/local/bin/bicep
+      - name: Build and deploy Azure resources
+        run: |
+          bicep build azure-resource.bicep
+          az deployment sub create --name AzureBicepLearnerDeploy --location canadacentral --template-file ./azure-resource.json
