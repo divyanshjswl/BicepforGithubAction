@@ -3,6 +3,7 @@ param name string = 'xyzzxy'
 param accessTier string = 'Hot'
 param skutype string = 'Premium_LRS'
 param sakind string = 'StorageV2'
+targetScope = 'resourceGroup'
 
 
 resource storageaccount 'Microsoft.Storage/storageAccounts@2023-01-01' = {
