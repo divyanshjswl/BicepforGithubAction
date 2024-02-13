@@ -51,7 +51,7 @@ module WebApplication 'Modules/WebApp.bicep' = {
   name: '${namePrefix}-WebApplication'
   params: {
     appServicePlanId: AppServicePlan.outputs.appServiePlanId
-    location: location
+    location: 'canadacentral'
     webAppName: '${namePrefix}-WebApplication'
   }
 }
