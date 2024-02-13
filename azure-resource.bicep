@@ -1,6 +1,5 @@
 // ****************************************** Common parameters **********************************************
 param namePrefix string = 'AzureBicepLearner'
-param location string = 'canadacentral'
 targetScope = 'resourceGroup'
 
 
@@ -14,7 +13,7 @@ module storageAccount 'Modules/StorageAccount.bicep' = {
   name: 'bicepsa09'
   params: {
     accessTier: accessTier
-    location: location
+    location: 'canadacentral'
     skutype: skuType
     storageKind: storageKind
     StorageName: 'sabicep09'
@@ -35,7 +34,7 @@ module AppServicePlan 'Modules/AppServicePlan.bicep' = {
   params: {
     appServicePlanName: '${namePrefix}-AppServicePlan'
     appServicePlanSku: appServicePlanSku
-    location: 'location'
+    location: 'canadacentral'
   }
 }
 
