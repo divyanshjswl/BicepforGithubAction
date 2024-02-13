@@ -1,6 +1,5 @@
 // ****************************************** Common parameters **********************************************
 param namePrefix string = 'AzureBicepLearner'
-param StorageAccountName string = uniqueString(resourceGroup().id)
 param location string = 'canadacentral'
 targetScope = 'resourceGroup'
 
