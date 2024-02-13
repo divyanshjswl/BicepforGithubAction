@@ -12,7 +12,7 @@ param skuType string = 'Premium_LRS'
 param storageKind string = 'StorageV2'
 
 module storageAccount 'Modules/StorageAccount.bicep' = {
-  name: StorageAccountName
+  name: 'bicepsa'
   params: {
     accessTier: accessTier
     location: location
