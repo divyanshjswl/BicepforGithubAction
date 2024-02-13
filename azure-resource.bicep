@@ -35,7 +35,7 @@ module AppServicePlan 'Modules/AppServicePlan.bicep' = {
   params: {
     appServicePlanName: '${namePrefix}-AppServicePlan'
     appServicePlanSku: appServicePlanSku
-    location: location
+    location: 'location'
   }
 }
 
